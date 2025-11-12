@@ -79,6 +79,39 @@ ccusage monthly --json > usage.json  # 导出 JSON 做二次分析
 
 ## 使用技巧
 
+### yolo模式启动
+
+如果你初次使用 Claude Code, 你会发现 cc的每一条命令都需要在[ yes/no/yes并且别在问我 ]三个选项中选择并确认.
+在经过初期的学习后你逐渐对此感到厌烦, 并希望它无人值守自动干活. 这时就可以启用yolo模式运行cc.
+
+**注意!这非常危险,使用时一定要小心.因为yolo模式意味着ai会自动执行所有命令!一定注意不要使用来历不明的mcp!**
+
+**建议在容器环境下使用, 通过容器的隔离和防火墙规则等安全措施, 最大程度的防止系统遭受攻击.**
+
+有两种方式可以跳过权限审批.
+
+#### 方法一：使用命令行参数
+
+在执行命令时, 添加 **--dangerously-skip-permissions** 参数, 可以在单次执行中跳过审批.
+
+```bash
+claude --dangerously-skip-permissions
+```
+
+#### 方法二：修改配置文件
+
+如果希望永久开启此模式, 可以修改其 **settings.json** 配置文件.添加以下内容后, cc将默认跳过所有权限提示.
+
+```json
+{
+  "permissions": {
+    "defaultMode": "bypassPermissions"
+  }
+}
+```
+
+说明：**"defaultMode": "bypassPermissions"** 指示cc将默认的操作模式设置为“绕过权限”, 从而实现自动执行.
+
 ### claude.md
 
 claude.md是一个特殊文件, Claude在开始对话时会自动将其拉入上下文.
@@ -105,13 +138,13 @@ cc会默认读取项目根目录的 claude.md(称之为记忆), 可以把项目�
 
 claude.md 文件可以使用 @path/to/file.md 语法导入其他文件,以把说明或配置拆成多个文件.
 
-**为了避免冲突或安全隐患，导入语法在 Markdown 的代码块或反引号（ ``` 或 `）中不会被解释为导入**
+**为了避免冲突或安全隐患, 导入语法在 Markdown 的代码块或反引号（ ``` 或 `）中不会被解释为导入**
 
 ```markdown
 // 相对路径和绝对路径都可以
-- 项目介绍 @docs/instructions.md 
+- 项目介绍 @docs/instructions.md
 - 个人偏好设置 @~/.claude/my-project-instructions.md
-- 加上``后，不被视为导入：`@anthropic-ai/claude-code`
+- 加上``后, 不被视为导入：`@anthropic-ai/claude-code`
 ```
 
 #### 核心开关 & 行为约束
