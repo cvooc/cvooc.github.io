@@ -4,6 +4,8 @@
 
 <img class="avatar" src="./static/assets/avatar.svg" alt="avatar">
 
+## ContactMe
+
 - 📺 Blog: https://cvooc.com
 - 📦 BlogBackup: https://cvooc.github.io
 - ❤️ Github: https://github.com/cvooc
@@ -12,8 +14,16 @@
 
 ## AboutMe
 
-性别: 男👦/95后/INFJ
+性别: 男👦/95后
+
+Mbti: INFP🪄➡️INFJ🧝🏻
+
 状态: 求偶💕
+
+近况: 健身中🏋🏻
+
+成就: 6个月减肥50斤!🏃🏻‍♂️没错我跑到博客来炫耀了!
+
 职业: 💻全栈工程师/前端开发/后端开发/移动端混合开发
 
 ### 10级网络冲浪选手🌊
