@@ -329,3 +329,89 @@ img {
     float: right;
     border-radius: 50%;
 }
+
+// ============================================
+// Taxonomy Page - Tag Cards Style
+// ============================================
+.taxonomy-section {
+    // Count bar
+    .taxonomy-count-bar {
+        text-align: center;
+        padding: 1rem 0 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .taxonomy-count-text {
+        font-size: 0.95rem;
+        color: #928374;
+        font-family: San Francisco Mono, Monaco, "Consolas", monospace;
+    }
+
+    // Tags cloud
+    .tags-cloud {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+        justify-content: center;
+    }
+
+    .tag-card {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.6rem 1.1rem;
+        background: #3c3836;
+        border: 1px solid #5a524c;
+        border-radius: 9999px;
+        text-decoration: none;
+        transition: all 0.2s ease;
+        font-size: calc(0.9rem * var(--size, 1));
+
+        .tag-card-name {
+            color: #ebdbb2;
+        }
+
+        .tag-card-count {
+            color: #fabd2f;
+            font-size: 0.8em;
+            font-weight: 600;
+            font-family: San Francisco Mono, Monaco, "Consolas", monospace;
+        }
+
+        &:hover {
+            background: #504945;
+            border-color: #fe8019;
+            transform: translateY(-2px);
+
+            .tag-card-name {
+                color: #fe8019;
+            }
+
+            .tag-card-count {
+                color: #fe8019;
+            }
+        }
+    }
+}
+
+// Responsive
+@media (max-width: 768px) {
+    .taxonomy-section {
+        .taxonomy-count-bar {
+            padding: 0.8rem 0 1rem;
+        }
+
+        .taxonomy-count-text {
+            font-size: 0.85rem;
+        }
+
+        .tags-cloud {
+            gap: 0.6rem;
+        }
+
+        .tag-card {
+            padding: 0.5rem 0.9rem;
+            font-size: 0.85rem;
+        }
+    }
+}

@@ -6,17 +6,27 @@
   <main id="main taxonomy-main">
   <div class="content">
     {{ partial "header.html" . }}
-    <section>
+    <section class="taxonomy-section">
       {{ .Content }}
-      <ul reversed class="list">
+
+      {{ $count := len .Pages }}
+      <div class="taxonomy-count-bar">
+        <span class="taxonomy-count-text">共 {{ $count }} 个标签</span>
+      </div>
+
+      {{/* Tags cloud */}}
+      <div class="tags-cloud">
         {{ range .Pages.ByTitle }}
-          <li>
-            <a class="link" href="{{ .Permalink }}" title="{{ .Title }}">{{ .Title }}
-            </a>
-            <time class="g time" datetime="{{ dateFormat "2006-01-02" .Date }}">{{ dateFormat "2006-01-02" .Date }}</time>
-          </li>
+          {{ $articleCount := len .Pages }}
+          {{ $size := 1.0 }}
+          {{ if gt $articleCount 5 }}{{ $size = 1.15 }}{{ else if gt $articleCount 2 }}{{ $size = 1.08 }}{{ end }}
+
+          <a class="tag-card" href="{{ .Permalink }}" title="{{ .Title }}" style="--size: {{ $size }}">
+            <span class="tag-card-name">{{ .Title }}</span>
+            <span class="tag-card-count">{{ $articleCount }}</span>
+          </a>
         {{ end }}
-      </ul>
+      </div>
     </section>
   </div>
 </main>
