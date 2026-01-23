@@ -7,14 +7,14 @@
     <meta name="description" content="{{ if ne .Description "" }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
     {{ template "_internal/opengraph.html" . }}
     {{ template "_internal/schema.html" . }}
-    {{ template "_internal/google_analytics.html" . }}
+    <!-- {{ template "_internal/google_analytics.html" . }} -->
     <link rel="canonical" href="{{ .Permalink }}">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2280%22>🤖</text></svg>">
-    <link rel="dns-prefetch" href="https://www.google-analytics.com">
-    <link href="https://www.google-analytics.com" rel="preconnect" crossorigin>
+    <!-- <link rel="dns-prefetch" href="https://www.google-analytics.com"> -->
+    <!-- <link href="https://www.google-analytics.com" rel="preconnect" crossorigin> -->
     <link rel="alternate" type="application/atom+xml" title="{{ .Site.Title }}" href="{{ .Site.BaseURL }}/atom.xml" />
     <link rel="alternate" type="application/json" title="{{ .Site.Title }}" href="{{ .Site.BaseURL }}/feed.json" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bricolage+Grotesque">
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bricolage+Grotesque"> -->
     <script defer src="https://umami.foo.run/random-string.js" data-website-id="d3f97d7f-260a-43cc-8270-359d32a3f7f8"></script>
     {{ $styles := resources.Get "scss/styles.scss" | toCSS (dict "outputStyle" "compressed") | minify }}
     <style>{{ $styles.Content | safeCSS }}</style>
