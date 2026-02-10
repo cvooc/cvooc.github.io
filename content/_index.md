@@ -10,7 +10,7 @@
 - 📦 BlogBackup: https://cvooc.github.io
 - ❤️ Github: https://github.com/cvooc
 - 🐧 QQ-QID: [cvooc](https://foo.run/s/qq)
-- 📧 Email: cvooc@qq.com
+- 📧 Email: cvooc@qq.com / mail@cvooc.com
 
 ## AboutMe
 
