@@ -11,6 +11,7 @@
 - ❤️ Github: https://github.com/cvooc
 - 🐧 QQ-QID: [cvooc](https://foo.run/s/qq)
 - 📧 Email: cvooc@qq.com / mail@cvooc.com
+- 💪 BodyFatProgress: https://claw.foo.run/bfp/
 
 ## AboutMe
 
